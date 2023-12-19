@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ post.title }} - My Blog</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='post-detail-styles.css') }}">
+    <style>
+        /* static/post-detail-styles.css */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+header {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 1em 0;
+}
+
+.post-details {
+    max-width: 800px;
+    margin: 2em auto;
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 1em;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.post-details h2 {
+    color: #333;
+}
+
+.post-content {
+    color: #666;
+    line-height: 1.6;
+}
+
+.pub-date {
+    color: #888;
+    font-size: 0.8em;
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 1em 0;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+
+    </style>
+</head>
+<body>
+    <header>
+        <h1><a href="{{ url_for('home') }}">My Blog</a></h1>
+    </header>
+
+    <div class="post-details">
+        <h2>{{ post.title }}</h2>
+        <p class="pub-date">Published on: {{ post.pub_date }}</p>
+        <div class="post-content">
+            {{ post.content }}
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2023 My Blog</p>
+    </footer>
+</body>
+</html>

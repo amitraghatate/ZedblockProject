@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <title>My Blog</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        
+        header {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 1em 0;
+        }
+        
+        .post-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            padding: 1em;
+        }
+        
+        .post-card {
+            background-color: white;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            margin: 1em;
+            padding: 1em;
+            width: 300px;
+            transition: transform 0.3s ease;
+        }
+        
+        .post-card:hover {
+            transform: scale(1.05);
+        }
+        
+        .post-card h2 {
+            color: #333;
+            margin-bottom: 0.5em;
+        }
+        
+        .post-content {
+            color: #666;
+        }
+        
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 1em 0;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+    </style>
+    </head>
+    <body>
+        <header>
+            <div class="admin-button position-absolute top-0 end-0">
+                <a href="{{ url_for('admin') }}" class="btn btn-info mx-3">Admin</a>
+            </div>
+            <h1>My Blog</h1>
+        </header>
+        
+        {% if posts %}
+            <div class="post-list">
+                {% for post in posts %}
+                    <div class="post-card">
+                        <h2><a href="{{ url_for('post_detail', post_id=post.id) }}">{{ post.title }}</a></h2>
+                        <p class="post-content">{{ post.content[:150] }}...</p>
+                    </div>
+                {% endfor %}
+                </div>
+        {% else %}
+        <div class="alert alert-warning my-4 text-center" role="alert">
+            No blogs available. Please add blog from Admin!
+          </div>
+        {% endif %}
+        <footer>
+            <p>&copy; 2023 My Blog</p>
+        </footer>
+    </body>
+    </html>
