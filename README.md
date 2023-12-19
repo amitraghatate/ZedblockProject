@@ -13,7 +13,7 @@ This is a simple personal blog platform where users can read posts, and the admi
 1. Clone the repository:
 
     ```bash
-    [git clone https://github.com/your-username/simple-blog-platform.git](https://github.com/amitraghatate/ZedblockProject.git)
+    https://github.com/amitraghatate/ZedblockProject.git
     ```
 
 2. Navigate to the project directory:
