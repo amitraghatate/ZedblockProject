@@ -52,7 +52,7 @@ This is a simple personal blog platform where users can read posts, and the admi
     ```
 
     The application will be accessible at http://127.0.0.1:5000/.
-## Images
+## Preview Images
 1. Home page without Values
    ![Alt text](HomePre.png)
 2. Admin page without values
