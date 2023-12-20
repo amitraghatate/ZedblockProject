@@ -9,7 +9,7 @@ This is a simple personal blog platform where users can read posts, and the admi
 - SQLite database
 
 ## Getting Started
-
+![Alt text]("F:\ZedBlockIntern\AdminPage.jpg")
 1. Clone the repository:
 
     ```bash
